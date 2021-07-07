@@ -9,9 +9,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.eclipse.microprofile.metrics.annotation.Counted;
-import org.eclipse.microprofile.metrics.annotation.Timed;
-
 import com.ramiro.microprofile.dto.TemplateDto;
 import com.ramiro.microprofile.form.Form;
 import com.ramiro.microprofile.service.ComprovanteBinder;
@@ -27,8 +24,8 @@ public class ComprovanteController {
 	@Path("detalhe")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Timed(name = "detalhe")
-	@Counted (name="detalheCount",description="The number of request to the comprovante")
+	//@Timed(name = "detalhe")
+	//@Counted (name="detalheCount",description="The number of request to the comprovante")
 	public Response obterComprovante(Form form) {
 
 		TemplateDto template = comprovanteBinder.bind(form.getComprovante(), form.getTemplate());

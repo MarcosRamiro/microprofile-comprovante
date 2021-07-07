@@ -1,11 +1,5 @@
 package com.ramiro.microprofile.metric;
 
-import org.eclipse.microprofile.metrics.Counter;
-import org.eclipse.microprofile.metrics.MetricUnits;
-import org.eclipse.microprofile.metrics.annotation.Gauge;
-import org.eclipse.microprofile.metrics.annotation.Metric;
-import org.eclipse.microprofile.metrics.annotation.Timed;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -17,12 +11,12 @@ import java.util.Random;
 public class MetricController {
 
     @Inject
-    @Metric(name = "endpoint_counter")
+    //@Metric(name = "endpoint_counter")
 
-    private Counter counter;
+    //private Counter counter;
 
     @Path("timed")
-    @Timed(name = "timed-request")
+   // @Timed(name = "timed-request")
     @GET
     public String timedRequest() {
         // Demo, not production style
@@ -41,12 +35,12 @@ public class MetricController {
     @Path("increment")
     @GET
     public long doIncrement() {
-        counter.inc();
-        return counter.getCount();
+        //counter.inc();
+        return 1;
     }
 
-    @Gauge(name = "counter_gauge", unit = MetricUnits.NONE)
+   // @Gauge(name = "counter_gauge", unit = MetricUnits.NONE)
     private long getCustomerCount() {
-        return counter.getCount();
+        return 1 ; //counter.getCount();
     }
 }

@@ -1,19 +1,19 @@
 package com.ramiro.microprofile.health;
 
-import org.eclipse.microprofile.health.HealthCheck;
-import org.eclipse.microprofile.health.HealthCheckResponse;
-import org.eclipse.microprofile.health.Liveness;
+//import org.eclipse.microprofile.health.HealthCheck;
+//import org.eclipse.microprofile.health.HealthCheckResponse;
+//import org.eclipse.microprofile.health.Liveness;
 
 import javax.enterprise.context.ApplicationScoped;
 
-@Liveness
+//@Liveness
 @ApplicationScoped
-public class ServiceLiveHealthCheck implements HealthCheck {
+public class ServiceLiveHealthCheck { // implements HealthCheck {
 
-    @Override
-    public HealthCheckResponse call() {
+    //@Override
+   // public HealthCheckResponse call() {
 
-        return HealthCheckResponse.named(ServiceLiveHealthCheck.class.getSimpleName()).withData("live",true).up().build();
+     //   return HealthCheckResponse.named(ServiceLiveHealthCheck.class.getSimpleName()).withData("live",true).up().build();
 
-    }
+   // }
 }
